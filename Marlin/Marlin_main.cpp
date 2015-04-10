@@ -1070,6 +1070,8 @@ static void clean_up_after_endstop_move() {
 }
 
 static void engage_z_probe() {
+  int k=0;
+while (k++<2){
     // Engage Z Servo endstop if enabled
     #ifdef SERVO_ENDSTOPS
     if (servo_endstops[Z_AXIS] > -1) {
@@ -1083,6 +1085,7 @@ static void engage_z_probe() {
 #endif
     }
     #endif
+}
 }
 
 static void retract_z_probe() {

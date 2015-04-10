@@ -166,7 +166,7 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 280
+#define HEATER_0_MAXTEMP 300
 #define HEATER_1_MAXTEMP 235
 #define HEATER_2_MAXTEMP 235
 #define BED_MAXTEMP 125
@@ -442,14 +442,14 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
   // these are the offsets to the probe relative to the extruder tip (Hotend - Probe)
   #define X_PROBE_OFFSET_FROM_EXTRUDER 21
   #define Y_PROBE_OFFSET_FROM_EXTRUDER 3 
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -.10
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -7
 
-  #define Z_RAISE_BEFORE_HOMING 4       // (in mm) Raise Z before homing (G28) for Probe Clearance.
+  #define Z_RAISE_BEFORE_HOMING 8       // (in mm) Raise Z before homing (G28) for Probe Clearance.
                                         // Be sure you have this distance over your Z_MAX_POS in case
 
-  #define XY_TRAVEL_SPEED 4000         // X and Y axis travel speed between probes, in mm/min
+  #define XY_TRAVEL_SPEED 8000         // X and Y axis travel speed between probes, in mm/min
 
-  #define Z_RAISE_BEFORE_PROBING 15    //How much the extruder will be raised before traveling to the first probing point.
+  #define Z_RAISE_BEFORE_PROBING 10    //How much the extruder will be raised before traveling to the first probing point.
   #define Z_RAISE_BETWEEN_PROBINGS 5  //How much the extruder will be raised when traveling from between next probing points
 
   //#define Z_PROBE_SLED // turn on if you have a z-probe mounted on a sled like those designed by Charles Bell
@@ -495,7 +495,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
-#define HOMING_FEEDRATE {50*60, 50*60, 50, 0}  // set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {50*60, 50*60, 50*60, 0}  // set the homing speeds (mm/min)
 
 // default settings
 
@@ -771,7 +771,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // Use M206 command to correct for switch height offset to actual nozzle height. Store that setting with M500.
 //
 #define SERVO_ENDSTOPS {-1, -1, 0} // Servo index for X, Y, Z. Disable with -1
-#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 53, 145} // X,Y,Z Axis Extend and Retract angles
+#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 13, 145} // X,Y,Z Axis Extend and Retract angles
 
 #include "Configuration_adv.h"
 #include "thermistortables.h"
